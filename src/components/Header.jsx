@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const { data, userLogout } = useContext(UserContext);
+  const { data } = useContext(UserContext);
   return (
     <div className="Header">
       <nav className="container">
@@ -15,7 +15,6 @@ const Header = () => {
         {data ? (
           <Link className="loginUser" to="/conta">
             {data.nome}
-            <button onClick={userLogout}>Sair</button>
           </Link>
         ) : (
           <Link className="loginUser" to="/login">
