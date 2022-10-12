@@ -1,0 +1,28 @@
+.UserStatsGraphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .UserStatsGraphs__graphItem {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    align-items: center;
+  }
+
+  .UserStatsGraphs__total {
+    grid-column: 1 / 3;
+    padding: 2rem;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .UserStatsGraphs {
+    grid-template-columns: 1fr;
+    
+    .UserStatsGraphs__total {
+      grid-column: 1;
+    }
+  }
+}
