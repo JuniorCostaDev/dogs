@@ -7,6 +7,7 @@ import useFetch from "../../Hooks/useFetch";
 import { PHOTO_POST } from "../../api";
 import Error from "../Helper/Error";
 import { useNavigate } from "react-router-dom";
+import Head from "../Helper/Head";
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -17,8 +18,8 @@ const UserPhotoPost = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(data) navigate('/conta')
-  }, [data, navigate])
+    if (data) navigate("/conta");
+  }, [data, navigate]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -41,6 +42,8 @@ const UserPhotoPost = () => {
   }
   return (
     <section className="UserPhotoPost animeLeft">
+      <Head title="Poste sua foto" />
+
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
